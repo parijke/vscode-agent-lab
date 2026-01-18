@@ -40,7 +40,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
         {/* CTA button with enhanced presence */}
         <button
           onClick={onStart}
-          className="w-full max-w-md mx-auto bg-espresso text-warm-white font-display font-bold py-6 px-10 rounded-lg text-xl md:text-2xl tracking-wide shadow-lg hover:bg-coffee-beans hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-wood-grain focus:ring-offset-4 focus:ring-offset-warm-white transition-all duration-200 active:scale-98"
+          className="w-full max-w-md mx-auto bg-espresso text-warm-white font-display font-bold py-6 px-10 rounded-lg text-xl md:text-2xl tracking-wide shadow-lg hover:bg-coffee-beans hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-wood-grain focus:ring-offset-4 focus:ring-offset-warm-white transition-all duration-200 active:scale-[0.98]"
         >
           Start Game
         </button>
