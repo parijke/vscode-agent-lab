@@ -4,7 +4,7 @@ import { BingoSquare } from './BingoSquare';
 interface BingoBoardProps {
   board: BingoSquareData[];
   winningSquareIds: Set<number>;
-  onSquareClick: (squareId: number) => void;
+  onSquareClick: () => void;
 }
 
 export function BingoBoard({ board, winningSquareIds, onSquareClick }: BingoBoardProps) {

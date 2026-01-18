@@ -5,7 +5,7 @@ interface GameScreenProps {
   board: BingoSquareData[];
   winningSquareIds: Set<number>;
   hasBingo: boolean;
-  onSquareClick: (squareId: number) => void;
+  onSquareClick: () => void;
   onReset: () => void;
 }
 
