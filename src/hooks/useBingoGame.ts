@@ -17,7 +17,8 @@ export interface BingoGameState {
 
 export interface BingoGameActions {
   startGame: () => void;
-  handleSquareClick: () => void;
+  // eslint-disable-next-line no-unused-vars
+  handleSquareClick: (squareId: number) => void;
   resetGame: () => void;
   dismissModal: () => void;
 }

@@ -1,11 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap');
+
 @import 'tailwindcss';
 
 @theme {
-  --color-accent: #2563eb;
-  --color-accent-light: #3b82f6;
-  --color-marked: #dcfce7;
-  --color-marked-border: #22c55e;
-  --color-bingo: #fbbf24;
+  /* Coffee Shop Palette */
+  --color-coffee-beans: #5C4033;
+  --color-cream-foam: #F5E6D3;
+  --color-wood-grain: #8B6F47;
+  --color-espresso: #3E2723;
+  --color-warm-white: #FEF9F3;
+  
+  /* Accent colors */
+  --color-accent: #8B6F47;
+  --color-accent-light: #A0826D;
+  --color-marked: #E8DCC8;
+  --color-marked-border: #8B6F47;
+  --color-bingo: #D4A574;
+  
+  /* Fonts */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Open Sans', sans-serif;
 }
 
 html,
@@ -16,6 +30,31 @@ body,
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-warm-white);
+  color: var(--color-coffee-beans);
   -webkit-tap-highlight-color: transparent;
+  
+  /* Subtle café noise texture */
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(92, 64, 51, 0.02),
+      rgba(92, 64, 51, 0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(92, 64, 51, 0.02),
+      rgba(92, 64, 51, 0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-coffee-beans);
 }

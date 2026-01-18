@@ -8,15 +8,15 @@ interface BingoSquareProps {
 
 export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
   const baseClasses =
-    'relative flex items-center justify-center p-1 text-center border border-gray-300 rounded transition-all duration-150 select-none min-h-[60px] text-xs leading-tight';
+    'relative flex items-center justify-center p-2 text-center border-2 rounded-sm transition-all duration-200 select-none min-h-[80px] text-xs leading-tight font-body overflow-hidden';
 
   const stateClasses = square.isMarked
     ? isWinning
-      ? 'bg-amber-200 border-amber-400 text-amber-900'
-      : 'bg-marked border-marked-border text-green-800'
-    : 'bg-white text-gray-700 active:bg-gray-100';
+      ? 'bg-gradient-to-br from-bingo to-marked border-coffee-beans shadow-md text-coffee-beans font-semibold'
+      : 'bg-gradient-to-br from-marked to-cream-foam border-wood-grain text-coffee-beans shadow-sm'
+    : 'bg-warm-white border-wood-grain/50 text-coffee-beans active:bg-cream-foam active:shadow-md';
 
-  const freeSpaceClasses = square.isFreeSpace ? 'font-bold text-sm' : '';
+  const freeSpaceClasses = square.isFreeSpace ? 'font-display font-bold text-sm bg-gradient-to-br from-wood-grain/20 to-transparent border-dashed' : '';
 
   return (
     <button
@@ -26,9 +26,38 @@ export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
       aria-pressed={square.isMarked}
       aria-label={square.isFreeSpace ? 'Free space' : square.text}
     >
-      <span className="wrap-break-word hyphens-auto">{square.text}</span>
+      {/* Napkin texture/aged paper effect */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
+        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(92, 64, 51, 0.1) 2px, rgba(92, 64, 51, 0.1) 4px)`
+      }} />
+
+      {/* Coffee stain edge effect for marked squares */}
       {square.isMarked && !square.isFreeSpace && (
-        <span className="absolute top-0.5 right-0.5 text-green-600 text-xs">✓</span>
+        <>
+          <div className="absolute top-0 right-0 w-8 h-8 opacity-20 pointer-events-none" style={{
+            background: `radial-gradient(circle, #3E2723 0%, transparent 70%)`
+          }} />
+          <div className="absolute bottom-1 left-1 w-6 h-6 opacity-15 pointer-events-none" style={{
+            background: `radial-gradient(circle, #8B6F47 0%, transparent 70%)`
+          }} />
+        </>
+      )}
+
+      {/* Text content */}
+      <span className="relative z-10 wrap-break-word hyphens-auto">{square.text}</span>
+
+      {/* Coffee stain marker instead of checkmark */}
+      {square.isMarked && !square.isFreeSpace && (
+        <span className="absolute top-1 right-1 text-sm z-20 font-bold text-coffee-beans opacity-70">
+          ✓
+        </span>
+      )}
+
+      {/* Free space center dot */}
+      {square.isFreeSpace && (
+        <span className="absolute inset-0 flex items-center justify-center text-lg opacity-40">
+          ☕
+        </span>
       )}
     </button>
   );
