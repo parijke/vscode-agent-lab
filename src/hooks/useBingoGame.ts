@@ -17,7 +17,7 @@ export interface BingoGameState {
 
 export interface BingoGameActions {
   startGame: () => void;
-  handleSquareClick: (squareId: number) => void;
+  handleSquareClick: () => void;
   resetGame: () => void;
   dismissModal: () => void;
 }
