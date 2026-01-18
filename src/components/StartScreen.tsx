@@ -24,17 +24,22 @@ export function StartScreen({
       }} />
 
       {/* Floating conversation bubbles as background decoration */}
-      <div className="absolute top-10 left-10 opacity-10 text-6xl">💬</div>
-      <div className="absolute top-20 right-16 opacity-10 text-5xl">🗨️</div>
-      <div className="absolute bottom-20 left-20 opacity-10 text-4xl">💭</div>
-      <div className="absolute bottom-32 right-12 opacity-10 text-5xl">💬</div>
+      <div className="absolute top-10 left-10 opacity-10 text-6xl" aria-hidden="true">💬</div>
+      <div className="absolute top-20 right-16 opacity-10 text-5xl" aria-hidden="true">🗨️</div>
+      <div className="absolute bottom-20 left-20 opacity-10 text-4xl" aria-hidden="true">💭</div>
+      <div className="absolute bottom-32 right-12 opacity-10 text-5xl" aria-hidden="true">💬</div>
 
       <div className="text-center max-w-2xl w-full space-y-6">
         {/* Event Organizer Branding Section */}
         <div className="bg-linear-to-br from-cream-foam/80 to-warm-white/90 rounded-2xl p-6 shadow-lg border-2 border-wood-grain/30 backdrop-blur-sm">
           {organizerLogo && (
             <div className="mb-4 flex justify-center">
-              <img src={organizerLogo} alt={organizerName} className="h-16 object-contain" />
+              <img 
+                src={organizerLogo} 
+                alt={`${organizerName} logo`} 
+                className="h-16 object-contain"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
             </div>
           )}
           <h2 className="font-display text-2xl font-bold text-coffee-beans mb-2">
@@ -157,7 +162,7 @@ export function StartScreen({
         >
           <span className="relative z-10 flex items-center justify-center gap-3">
             <span>Start Connecting</span>
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+            <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
           </span>
           {/* Animated shimmer effect */}
           <div className="absolute inset-0 bg-linear-to-r from-transparent via-warm-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
