@@ -89,15 +89,15 @@ export function StartScreen({ onStart }: StartScreenProps) {
             How to Play
           </h2>
           <ul className="text-coffee-beans text-sm space-y-2 relative z-10">
-            <li className="flex items-start transition-all duration-200 hover:translate-x-1 hover:text-wood-grain cursor-default">
+            <li className="flex items-start transition-all duration-200 hover:translate-x-1 hover:text-wood-grain">
               <span className="mr-3 text-wood-grain font-bold transition-transform duration-200 hover:scale-110">✕</span>
               <span>Find people who match the questions</span>
             </li>
-            <li className="flex items-start transition-all duration-200 hover:translate-x-1 hover:text-wood-grain cursor-default">
+            <li className="flex items-start transition-all duration-200 hover:translate-x-1 hover:text-wood-grain">
               <span className="mr-3 text-wood-grain font-bold transition-transform duration-200 hover:scale-110">✕</span>
               <span>Tap a square when you find a match</span>
             </li>
-            <li className="flex items-start transition-all duration-200 hover:translate-x-1 hover:text-wood-grain cursor-default">
+            <li className="flex items-start transition-all duration-200 hover:translate-x-1 hover:text-wood-grain">
               <span className="mr-3 text-wood-grain font-bold transition-transform duration-200 hover:scale-110">✕</span>
               <span>Get 5 in a row to win a free espresso!</span>
             </li>
